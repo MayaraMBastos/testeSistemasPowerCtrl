@@ -1,0 +1,64 @@
+
+<div class="divParcial" id="formularioProgramar">
+    <div class="formulario" id="formularioProg">
+        <h2>Programar Dispositivos</h2>
+
+        <div id="linha1">
+        <label for="nomeSetor"> Setor
+            <input
+                    type="text"
+                    th:value="${dispositivos.nome_setor}"
+                    name="nomeSetor"
+                    id="nomeSetor"
+                    required
+            /></label>
+        <label> Selecione Tipo de programação
+        <select name="selectProgramacao" id="selecionarOpc" >
+            <option value="1" selected>Selecione</option>
+            <option value="2">Programação Diária</option>
+            <option value="3">Intervalo de Datas</option>
+        </select></label>
+        </div>
+        <div id="linha2">
+            <div id="datas" >
+        <label for="dataInicial"> Data Inicial
+            <input
+                    type="date"
+                    name="dataInicial"
+                    id="dataInicial"
+                    placeholder="DD/MM/AA"
+                    required
+            /></label>
+        <label for="dataFinal"> Data Final
+            <input
+                    type="date"
+                    name="dataFinal"
+                    id="dataFinal"
+                    placeholder="DD/MM/AA"
+                    required
+            /></label>
+            </div>
+            <div id="horarios">
+        <label for="horarioInicial"> Horário Ligar
+            <input
+                    type="time"
+                    name="horarioInicial"
+                    id="horarioInicial"
+                    placeholder="HH:MM"
+                    required
+            /></label>
+        <label for="horarioFinal"> Horário Desligar
+            <input
+                    type="time"
+                    name="horarioFinal"
+                    id="horarioFinal"
+                    placeholder="HH:MM"
+                    required
+            /></label>
+            </div>
+        </div>
+        <!--    post no controller e ajax-->
+        <a type="button" href="/cadatrosProgramar" class="btn col">Programar</a>
+    </div>
+
+</div>

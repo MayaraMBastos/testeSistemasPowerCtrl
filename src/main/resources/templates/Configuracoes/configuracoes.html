@@ -1,0 +1,124 @@
+<div class="divParcial" id="formularioConfiguracoes">
+<div class="formulario" >
+    <p id="errorMessage"></p>
+    <h1>Configuracões</h1>
+    <p>Preencha os campos abaixo para fazer a atualização dos dados do cadastro no PowerCtrl</p>
+    <label for="nomecompleto">
+        <input
+                type="text"
+                th:value="${usuario.nomecompleto}"
+                name="nomecompleto"
+                id="nomecompleto"
+                placeholder="Insira seu nome completo"
+
+                required
+        /></label>
+    <label for="cpf">
+        <input
+                type="text"
+                th:value="${usuario.cpf}"
+                name="cpf"
+                id="cpf"
+                placeholder="000.000.000-00"
+
+                required
+        /></label>
+    <label for="cidade">
+        <input
+                type="text"
+                th:value="${usuario.cidade}"
+                name="cidade"
+                id="cidade"
+                placeholder="Cidade"
+
+                required
+        /></label>
+    <label for="estado">
+        <input
+                type="text"
+                th:value="${usuario.estado}"
+                name="estado"
+                id="estado"
+                placeholder="Estado"
+
+                required
+        /></label>
+    <label for="endereco">
+        <input type="text"
+               th:value="${usuario.endereco}"
+               name="endereco"
+               id="endereco"
+               placeholder="Endereço: Rua Exemplo, 100"
+
+               required
+        /></label>
+    <label for="cep">
+        <input
+                type="number"
+                th:value="${usuario.cep}"
+                name="cep"
+                id="cep"
+                placeholder="12345-000"
+                required
+
+        /></label>
+    <label for="email">
+        <input
+                type="email"
+                th:value="${usuario.email}"
+                name="email"
+                id="email"
+                placeholder="exemplo@email.com"
+
+                required
+        /></label>
+    <label for="telefone">
+        <input
+                type="number"
+                th:value="${usuario.telefone}"
+                name="telefone"
+                id="telefone"
+                placeholder="(00) 99900-1234"
+
+                required
+        /></label>
+    <label for="usuario">
+        <input
+                type="text"
+                th:value="${usuario.usuario}"
+                name="usuario"
+                id="usuario"
+                placeholder="Nome de usuario"
+
+                required
+        /></label>
+    <label for="senhaAtual">
+        <input
+                type="password"
+                name="senhaAtual"
+                id="senhaAtual"
+                placeholder="Insira a senha Atual"
+
+                required
+        /></label>
+    <label for="novaSenha">
+        <input
+                type="password"
+                name="novaSenha"
+                id="novaSenha"
+                placeholder="Insira uma nova senha"
+
+                required
+        /></label>
+
+    <label for="senhaRepeticao">
+        <input
+                type="password"
+                name="senhaRepeticao"
+                id="senhaRepeticao"
+                placeholder="Repita a senha"
+                required
+        /></label>
+    <button id="btnEditarCadastro" type="submit" class="btn">Cadastrar</button>
+</div>
+</div>

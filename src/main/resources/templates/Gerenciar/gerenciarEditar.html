@@ -1,0 +1,29 @@
+
+<div class="divParcial" id="formularioRele">
+  <div class="formulario" id="formularioAdd">
+    <h2>Formulario para editar dipositivos</h2>
+
+    <label for="nomeSetor">
+      <input th:value="${dispositivos.nome_setor}"
+              type="text"
+              name="nomeSetor"
+              id="nomeSetor"
+              placeholder="Insira o nome do setor"
+              required
+      /></label>
+    <!--              th -->
+    <label for="codigoDispositivo">  <!--VALIDACAO SE EXISTE O CODIGO NO BANCO DO POWERCTRL-->
+      <input th:value="${dispositivos.cod_dispositivo}"
+              type="text"
+              name="codigoDispositivo"
+              id="codigoDispositivo"
+              placeholder="Insira o codigo do dispositivo"
+
+              required
+      /></label>
+    <!--              th-->
+    <!--    post no controller e ajax-->
+    <button type="submit" id="editarRele" th:href="@{'/editarRele/' + ${dispositivos.id_dispositivo}}" class="btn col">Editar</button>
+  </div>
+
+</div>

@@ -1,0 +1,38 @@
+<script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"
+></script>
+<script src="js/routes.js" defer></script>
+<div id="listaGerenciar">
+
+        <div class="divParcial">
+
+                    <div class="caixaTopo">
+                        <h2>Dispositivos</h2>
+                        <a href="#" class="btn">Ver todos</a>
+                    </div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Setor</td>
+                            <td>Deletar Dispositivo</td>
+                            <td>Editar Dispositivo</td>
+                            <td>Programar Dispositivo</td>
+                            <td>Situação</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="dispositivo : ${dispositivos}">
+                            <td th:text="${dispositivo.nome_setor}" >NomeDispositivo</td>
+                            <td><a th:href="@{'/deletar/' + ${dispositivo.id_dispositivo}}">Excluir</a></td>
+                            <td><a th:href="@{'/editarRele/' + ${dispositivo.id_dispositivo}}" id="btnEditarRele">Editar</a></td>
+                            <td><a th:href="@{'/programarRele/' + ${dispositivo.id_dispositivo}}" id="btnProgramarRele">Programar</a></td>
+                            <td><span class="situacao entregue">Ligado</span></td> <!--TH STATUS MUDAR NOMES DAS SITUAÇOES-->
+                        </tr>
+                        </tbody>
+                    </table>
+
+            </div>
+
+</div>

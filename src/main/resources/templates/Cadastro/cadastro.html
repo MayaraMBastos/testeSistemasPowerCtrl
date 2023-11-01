@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/cadastro.js" defer></script>
+    <script src="js/validadorCPF.js" defer></script>
+    <script src="js/alertas.js"></script>
+    <title>Cadastro</title>
+</head>
+<body>
+<div class="main_cadastro">
+
+    <div class="formulario">
+        <p id="errorMessage"></p>
+        <h1>Cadastro PowerCtrl</h1>
+        <p>Preencha os campos abaixo para fazer o cadastro do PowerCtrl</p>
+        <label for="nomecompleto">
+            <input
+                    type="text"
+                    name="nomecompleto"
+                    id="nomecompleto"
+                    placeholder="Insira seu nome completo"
+
+                    required
+            /></label>
+        <label for="cpf">
+            <input
+                    type="text"
+                    name="cpf"
+                    id="cpf"
+                    placeholder="000.000.000-00"
+
+                    required
+            /></label>
+        <label for="cidade">
+            <input
+                    type="text"
+                    name="cidade"
+                    id="cidade"
+                    placeholder="Cidade"
+
+                    required
+            /></label>
+        <label for="estado">
+            <input
+                    type="text"
+                    name="estado"
+                    id="estado"
+                    placeholder="Estado"
+
+                    required
+            /></label>
+        <label for="endereco">
+            <input type="text" name="endereco" id="endereco"
+                   placeholder="Endereço: Rua Exemplo, 100"
+
+                   required
+            /></label>
+        <label for="cep">
+            <input
+                    type="number"
+                    name="cep"
+                    id="cep"
+                    placeholder="12345-000"
+                    required
+
+            /></label>
+        <label for="email">
+            <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="exemplo@email.com"
+
+                    required
+            /></label>
+        <label for="telefone">
+            <input
+                    type="tel"
+                    name="telefone"
+                    id="telefone"
+                    placeholder="(00) 99900-1234"
+
+                    required
+            /></label>
+        <label for="usuario">
+            <input
+                    type="text"
+                    name="usuario"
+                    id="usuario"
+                    placeholder="Nome de usuario"
+
+                    required
+            /></label>
+        <label for="senha">
+            <input
+                    type="password"
+                    name="senha"
+                    id="senha"
+                    placeholder="Insira uma senha"
+
+                    required
+            /></label>
+        <label for="senhaRepeticao">
+            <input
+                    type="password"
+                    name="senhaRepeticao"
+                    id="senhaRepeticao"
+                    placeholder="Repita a senha"
+                    required
+            /></label>
+        <button id="btnCadastrar" type="submit" class="btn">Cadastrar</button>
+    </div>
+</div>
+</body>
+</html>

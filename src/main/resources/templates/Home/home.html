@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!--Sweet Alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <script src="js/alertas.js" defer></script>
+    <!--  CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--  JQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!--  Graficos-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Scripts-->
+    <script type="text/javascript" src="js/arquivo.js" defer></script>
+    <script src="js/cadastro.js" defer></script>
+    <script src="js/validadorCPF.js"></script>
+    <script src="js/alertas.js"></script>
+    <script src="js/gerenciar.js" defer></script>
+    <script src="js/cadastroAddRele.js" defer></script>
+    <script src="js/routes.js" defer></script>
+
+  </head>
+  <body>
+    <div class="menuMain">
+      <div class="navegador">
+        <ul>
+          <li>
+            <a href="https://github.com/MayaraMBastos">
+              <span class="icone">
+                <img
+                  src="./imagens/logo64.png"
+                  alt="logo da marca"
+                  class="logoSvg"
+                />
+              </span>
+              <span class="titulo">PowerCtrl</span>
+            </a>
+          </li>
+          <li>
+            <a href="/home">
+              <span class="icone">
+                <img src="./svgs/home.svg" alt="" class="dashSvg" />
+              </span>
+              <span class="titulo">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/gerenciar">
+              <span class="icone"
+                ><img src="./svgs/clientes.svg" alt="" class="clientesSvg"
+              /></span>
+              <span class="titulo">Dispositivos</span>
+            </a>
+          </li>
+          <li>
+            <a href="/graficos">
+              <span class="icone"
+                ><img src="./svgs/mensagens.svg" alt="" class="msgSvg"
+              /></span>
+              <span class="titulo">Gráficos</span>
+            </a>
+          </li>
+          <li>
+            <a href="/ajuda">
+              <span class="icone"
+                ><img src="./svgs/ajuda.svg" alt="" class="ajudaSvg"
+              /></span>
+              <span class="titulo">Ajuda</span>
+            </a>
+          </li>
+          <li>
+            <a href="/configuracoes">
+              <span class="icone"
+                ><img src="./svgs/configuracoes.svg" alt="" class="configSvg"
+              /></span>
+              <span class="titulo">Configurações</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/logout">
+              <span class="icone"
+                ><img src="./svgs/sign-out.svg" alt="" class="singOutSvg"
+              /></span>
+              <span class="titulo">Sair</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!--Main-->
+<div id="errorMessage"></div>
+      <div class="main">
+        <div class="barraTopo">
+          <div class="menu" onclick="menuResponsivo()">
+            <img src="./svgs/menu.svg" alt="" />
+          </div>
+          <!--Campo de busca-->
+          <div class="busca">
+            <label>
+              <input
+                type="text"
+                name="busca"
+                id="campoBusca"
+                placeholder="Busca"
+              />
+              <img src="./svgs/busca.svg" alt="" />
+            </label>
+          </div>
+          <!--Imagem do usuario-->
+          <div class="user">
+            <img src="./imagens/usuario.jpg" alt="Foto do usuario" />
+          </div>
+        </div>
+
+        <!--Cards do main-->
+        <div class="caixaCards">
+          <a href="/gerenciarAdd" class="addDispositivo">
+            <div class="card">
+              <div>
+                <div class="numeros">Add</div>
+                <div class="nomeCard">Dispositivos</div>
+              </div>
+              <div class="caixaIcones">
+                <i
+                  class="fa-solid fa-circle-plus fa-2xl"
+                  style="color: #afafaf"
+                ></i>
+              </div></div
+          ></a>
+          <a href="/gerenciar">
+            <div class="card">
+              <div>
+                <div class="numeros">Deletar</div>
+                <div class="nomeCard">Dispositivos</div>
+              </div>
+              <div class="caixaIcones">
+                <i
+                  class="fa-solid fa-circle-xmark fa-2xl"
+                  style="color: #afafaf"
+                ></i>
+              </div>
+            </div>
+          </a>
+
+          <a href="/gerenciar">
+            <div class="card">
+              <div>
+                <div class="numeros">Editar</div>
+                <div class="nomeCard">Dispositivos</div>
+              </div>
+              <div class="caixaIcones">
+                <i class="fa-solid fa-gear fa-2xl" style="color: #afafaf"></i>
+              </div>
+            </div>
+          </a>
+          <a href="/gerenciar">
+            <div class="card">
+              <div>
+                <div class="numeros">Programar</div>
+                <div class="nomeCard">Dispositivos</div>
+              </div>
+              <div class="caixaIcones">
+                <i class="fa-solid fa-clock fa-2xl" style="color: #afafaf"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="container">
+          <!--Lista de detalhes da compra-->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

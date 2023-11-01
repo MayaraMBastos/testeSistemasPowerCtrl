@@ -1,0 +1,62 @@
+<div id="listaHome">
+<div class="divParcial">
+    <div class="caixaTopo">
+      <h2>Setores</h2>
+      <a href="#" class="btn">Ver todos</a>
+    </div>
+    <table>
+      <thead>
+      <tr>
+        <td>Setor</td>
+        <td>Consumo Dia</td>
+        <td>Real Time</td>
+        <td>Situação</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="dispositivo : ${dispositivos}">
+        <td th:text="${dispositivo.nome_setor}">Linha 1</td><!--TH nomeSetor-->
+        <td th:text="${dispositivo.consumoDiario}">200 kW</td><!--TH consumoDiario-->
+<!--        <td th:text="${dispositivo.status.consumoRealTime}">1.7 kW</td>&lt;!&ndash;TH consumoRealTime&ndash;&gt;-->
+<!--        <td th:text="${dispositivo.status.statusOnOff}"><span class="situacao pendente">Ligado</span></td> &lt;!&ndash;TH statusOnOff&ndash;&gt;-->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--LISTA DE GRAFICOS DE CONSUMO SEMANAL-->
+  <div class="clienteNovos">
+    <div class="caixaTopo">
+      <h2>Graficos</h2>
+    </div>
+    <table>
+      <tr>
+        <td width="60px"><div class="caixaImg"><img src="imagens/imagemGrafico.png" alt=""></div></td>
+        <td><h4>Linha 1<br><span>Mensal</span></h4></td>
+      </tr>
+      <tr>
+        <td width="60px"><div class="caixaImg"><img src="imagens/imagemGrafico.png" alt=""></div></td>
+        <td><h4>Linha 2<br><span>Mensal</span></h4></td>
+      </tr>
+      <tr>
+        <td width="60px"><div class="caixaImg"><img src="imagens/imagemGrafico.png" alt=""></div></td>
+        <td><h4>Linha 3<br><span>Mensal</span></h4></td>
+      </tr>
+      <tr>
+        <td width="60px"><div class="caixaImg"><img src="imagens/imagemGrafico.png" alt=""></div></td>
+        <td><h4>Linha 4<br><span>Mensal</span></h4></td>
+      </tr>
+      <tr>
+        <td width="60px"><div class="caixaImg"><img src="imagens/imagemGrafico.png" alt=""></div></td>
+        <td><h4>Linha 5<br><span>Mensal</span></h4></td>
+      </tr>
+      <tr>
+        <td width="60px"><div class="caixaImg"><img src="imagens/imagemGrafico.png" alt=""></div></td>
+        <td><h4>Linha 6<br><span>Mensal</span></h4></td>
+      </tr>
+      <tr>
+        <td width="60px"><div class="caixaImg"><img src="imagens/imagemGrafico.png" alt=""></div></td>
+        <td><h4>Linha 7<br><span>Mensal</span></h4></td>
+      </tr>
+    </table>
+  </div>
+</div>

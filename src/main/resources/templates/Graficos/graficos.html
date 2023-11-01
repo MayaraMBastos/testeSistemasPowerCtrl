@@ -1,0 +1,28 @@
+
+
+            <canvas class="grafico" id="graficoconsumo"></canvas>
+            <script>
+                const ctx = document.getElementById('graficoconsumo');
+              
+                new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                    datasets: [{
+                      label: 'Consumo KW/Mês',
+                      data: [12, 19, 3, 5, 2, 3],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      y: {
+                        beginAtZero: true
+                      }
+                    }
+                  }
+                });
+              </script>
+        </div>
+       
+    <script type="text/javascript" src="./arquivo.js"></script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="main_cadastro">
+<!--Fazer ajax do login-->
+    <form action="/" method="POST" class="formulario">
+        <h1 class="row">Login PowerCtrl</h1>
+
+        <label for="usuario" class="row">
+            <input
+                    type="text"
+                    name="usuario"
+                    id="usuario"
+                    placeholder="Nome de usuario"
+                    required
+            /></label>
+        <label for="senha" class="row">
+            <input
+                    type="password"
+                    name="senha"
+                    id="senha"
+                    placeholder="Insira sua senha"
+                    required
+            /></label>
+        <div class="row">
+            <button type="submit" id="btnLogar" class="btn col">Entrar</button>
+            <a type="button" href="/Cadastro" class="btn col">Cadastrar</a>
+
+        </div>
+        <p class="row"><a href="redefinir">Não lembro usúario e senha.</a></p>
+
+    </form>
+
+</div>
+</body>
+</html>

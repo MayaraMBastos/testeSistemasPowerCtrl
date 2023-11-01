@@ -1,0 +1,642 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;700&family=Ubuntu:wght@300;400;500&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+  --azul_turquesa: #4d96a8;
+  --branco: #ffffff;
+  --cinza: #f5f5f5;
+  --preto1: #222;
+  --cinza2: #999;
+  --entregue: #2ca7e0;
+  --pendente: rgb(48, 139, 60);
+  --devolvido: #f00;
+  --progresso: rgb(103, 103, 221);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden; /* corta o conteúdo se passar das bordas*/
+}
+
+p, h2 {
+margin: 10px;
+}
+
+
+
+.menuMain {
+  position: relative;
+  width: 100%;
+}
+
+.navegador {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--azul_turquesa);
+  border-left: 10px solid var(--azul_turquesa);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navegador.ativo {
+  width: 70px;
+}
+
+.navegador ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navegador ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.navegador ul li:hover {
+  /*hover muda a cor quando o mouse passa por cima*/
+  background: var(--branco);
+}
+
+.navegador ul li:nth-child(1) {
+  /*seleciona elementos com base em suas posições em um grupo de elementos irmãos*/
+  margin-bottom: 40px;
+  pointer-events: none; /*retira o evento de hover neste li*/
+}
+
+.navegador ul li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  color: var(--branco);
+}
+
+.navegador ul li:hover a {
+  color: var(--azul_turquesa);
+}
+.navegador ul li:hover img {
+  filter: invert(1);
+}
+
+.navegador ul li a .icone {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px; /*altura da linha, não foi feito div*/
+  text-align: center;
+}
+
+/*.navegador ul li a .icone span{
+    font-size: 1.75em;
+}*/
+
+.navegador ul li a .titulo {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap; /*espaços em branco dentro dos elementos , quebra a linha*/
+}
+
+.navegador ul li:hover a::before,
+.navegador ul li.hovered a::before {
+  /*borda interna arredondada*/
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--branco);
+  pointer-events: none;
+}
+
+.navegador ul li:hover a::after,
+.navegador ul li.hovered a::after {
+  /*borda interna arredondada*/
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--branco);
+  pointer-events: none;
+}
+
+span img,
+.menu img {
+  width: 30px;
+  height: 30px;
+}
+
+.busca img {
+  width: 20px;
+  height: 20px;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+}
+/*-------------------------MAIN-------------------------*/
+
+.main {
+  position: absolute;
+  width: calc(100% - 300px); /*o calc é o calculo do comprimento*/
+  left: 300px;
+  min-height: 100vh;
+  background-color: var(--branco);
+  transition: 0.5s;
+  padding: 10px;
+}
+
+.main_cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  text-align: center;
+  width: 100%; 
+  min-height: 100vh;
+  background-color: var(--branco);
+  transition: 0.5s;
+  padding: 50px;
+  
+}
+
+.row {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+.col {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+
+.barraTopo {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.menu {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  cursor: pointer; /*especifica o cursor do mouse como maozinha*/
+}
+
+.busca {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.busca label{
+  position: relative;
+  width: 100%;
+}
+
+
+
+.formulario label input, .formulario label select{
+  height: 40px;
+
+}
+
+.formulario label input, .formulario label select, .formulario textarea{
+width: 100%;
+margin: 10px;
+border-radius: 20px;
+  padding: 0px 20px;
+  outline: none;
+  font-size: 18px;
+  border: 1px solid var(--cinza2);
+  }
+
+.formulario#formularioProg{
+width: auto;
+}
+
+#linha1, #linha2 ,#datas, #horarios{
+    margin: 30px 0 30px 0;
+    display: grid;
+    justify-content: center;
+    text-align: left;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#linha2 input{
+width: 200px
+}
+
+.formulario {
+  width: 50%;
+  margin: 10px;
+}
+
+
+
+/*.formulario button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px 5px 35px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 18px;
+}*/
+
+.busca label input{
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px 5px 35px;
+  outline: none;
+  font-size: 18px;
+  border: 1px solid var(--cinza2);
+}
+
+.busca label img {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+
+
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden; /*O conteúdo é cortado e nenhuma barra de rolagem é exibida.*/
+  cursor: pointer;
+}
+
+.user img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* elemento  ajustado à caixa estabelecida pela altura e largura usadas*/
+}
+
+.caixaCards {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.caixaCards .card {
+  position: relative;
+  background: var(--branco);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.caixaCards .card .numeros {
+  position: relative;
+  font-weight: 500;
+  font-size: 2em;
+  color: var(--azul_turquesa);
+}
+
+.caixaCards .card .nomeCard {
+  color: var(--cinza2);
+  font-size: 1em;
+  margin-top: 8px;
+}
+.caixaCards .card .caixaIcones {
+  color: var(--cinza2);
+}
+
+.caixaCards .card .caixaIcones i {
+ display: flex;
+align-items: center;
+justify-content: center;
+    margin: 5px;
+
+  width: 40px;
+  height: 40px;
+}
+
+.caixaCards .card:hover {
+  background: var(--azul_turquesa);
+}
+
+.caixaCards .card:hover .numeros,
+.caixaCards .card:hover .nomeCard,
+.caixaCards .card:hover .caixaIcones,
+.caixaCards .card:hover .caixaIcones img {
+  color: var(--branco);
+}
+
+
+
+.container {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+
+}
+#listaHome{
+ display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+#listaGerenciar{
+display: block;
+}
+
+#formularioRele.divParcial, #formularioConfiguracoes.divParcial, #formularioAjuda.divParcial{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+
+    }
+
+.divParcial {
+  position: relative;
+  /*display: grid;*/
+  min-height: 500px;
+  background: var(--branco);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.caixaTopo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.caixaTopo h2 {
+  font-weight: 600;
+  color: var(--azul_turquesa);
+}
+
+.btn {
+text-align: center;
+width: 30%;
+  padding: 5px 10px;
+  background: var(--azul_turquesa);
+  text-decoration: none;
+  color: var(--branco);
+  border-radius: 40px;
+  cursor: pointer
+}
+.btn:hover {
+
+  background: var(--cinza);
+  text-decoration: none;
+  color: var(--preto1);
+
+}
+
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.container table thead td {
+  font-weight: 600;
+}
+
+.container .divParcial table tr {
+  color: var(--preto1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.container .divParcial table tr:last-child {
+  border-bottom: none;
+}
+
+.container .divParcial table tbody tr:hover {
+  background: var(--azul_turquesa);
+  color: var(--branco);
+}
+
+.container .divParcial table tr td {
+  padding: 10px;
+}
+
+.container .divParcial table tr td:last-child {
+  text-align: end;
+}
+
+.container .divParcial table tr td:nth-child(2) {
+  text-align: end;
+}
+
+.container .divParcial table tr td:nth-child(3) {
+  text-align: center;
+}
+
+.situacao.entregue {
+  padding: 2px 4px;
+  background: var(--entregue);
+  color: var(--branco);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.situacao.pendente {
+  padding: 2px 4px;
+  background: var(--pendente);
+  color: var(--branco);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.situacao.devolvido {
+  padding: 2px 4px;
+  background: var(--devolvido);
+  color: var(--branco);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.situacao.progresso {
+  padding: 2px 4px;
+  background: var(--progresso);
+  color: var(--branco);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.clienteNovos {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  background: var(--branco);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.clienteNovos .caixaImg {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.clienteNovos .caixaImg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clienteNovos table tr td {
+  padding: 12px 10px;
+}
+
+.clienteNovos table tr td h4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.clienteNovos table tr td h4 span {
+  font-size: 14px;
+  color: var(--cinza2);
+}
+
+.clienteNovos table tr:hover {
+  background: var(--azul_turquesa);
+  color: var(--branco);
+}
+
+.clienteNovos table tr:hover td h4 span {
+  color: var(--branco);
+}
+
+.grafico{
+  width: 450px;
+  height: 450px;
+}
+
+/*RESPONSIVIDADE*/
+@media (max-width: 991px) {
+  .navegador {
+    left: -300px;
+  }
+
+  .navegador.ativo {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100% !important;
+    left: 0 !important;
+  }
+
+  .main.ativo {
+    left: 80px !important;
+  }
+
+  .caixaCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .divParcial {
+    overflow-x: auto;
+  }
+  .situacao.progresso {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .caixaCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .caixaTopo h2 {
+    font-size: 18px;
+  }
+
+  .user {
+    min-width: 40px;
+  }
+
+  .navegador {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+
+  .navegador.ativo {
+    width: 100%;
+    left: 0;
+  }
+  .menu{
+    z-index: 10001;
+  }
+
+  .main.ativo .barraTopo .menu{
+    position: fixed;
+    right: 0;
+    left: initial;
+    color: var(--branco);
+  }
+}
